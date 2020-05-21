@@ -2,6 +2,8 @@
 
 A Flutter Widget to make interactive timeline widget.
 
+This widget can be used to make Event Timelines, or Timelines for certain travel journey. This widget provides easy customisation of individual event bubbles.
+
 ## Screenshots
 
 <img src="screenshot.png" height="500px">
