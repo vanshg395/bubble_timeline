@@ -1,4 +1,4 @@
-# bubble_timeline
+# Bubble Timeline Package
 
 A Flutter Widget to make interactive timeline widget.
 
@@ -73,6 +73,11 @@ TimelineItem(
     bubbleColor: Colors.blue,
 ),
 ```
+
+
+## LICENSE
+
+GNU GENERAL PUBLIC LICENSE 3.0
 
 
 
