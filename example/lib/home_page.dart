@@ -2,7 +2,7 @@ import 'package:bubble_timeline/timeline_item.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble_timeline/bubble_timeline.dart';
 
-class TestScreen extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final List<TimelineItem> _items = [
     TimelineItem(
       title: 'Boat',
