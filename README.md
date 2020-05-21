@@ -6,7 +6,7 @@ This widget can be used to make Event Timelines, or Timelines for certain travel
 
 ## Screenshots
 
-<img src="screenshot.png" height="500px">
+<img src="https://github.com/vanshg395/bubble_timeline/blob/master/screenshot.png?raw=true" height="500px">
 
 ## Installing
 

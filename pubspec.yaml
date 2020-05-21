@@ -1,6 +1,6 @@
 name: bubble_timeline
-description: A Flutter Widget to make interactive timeline widget.
-version: 1.0.0
+description: A Flutter Widget to make interactive timeline widget. This widget provides easy customisation of individual event bubbles.
+version: 1.0.3
 homepage: https://github.com/vanshg395/bubble_timeline
 
 environment:
