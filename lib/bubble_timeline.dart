@@ -181,6 +181,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
+                        textAlign: TextAlign.right,
                       ),
                     ],
                     if (description != null) ...[
@@ -189,6 +190,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                       Text(
                         description,
+                        textAlign: TextAlign.right,
                       ),
                     ],
                   ]
@@ -266,6 +268,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
+                        textAlign: TextAlign.left,
                       ),
                     ],
                     if (description != null) ...[
@@ -274,6 +277,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                       Text(
                         description,
+                        textAlign: TextAlign.left,
                       ),
                     ],
                   ]

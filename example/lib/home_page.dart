@@ -7,19 +7,28 @@ class HomePage extends StatelessWidget {
     TimelineItem(
       title: 'Boat',
       subtitle: 'Travel through Oceans',
-      icon: Icon(Icons.directions_boat),
+      icon: Icon(
+        Icons.directions_boat,
+        color: Colors.white,
+      ),
       bubbleColor: Colors.grey,
     ),
     TimelineItem(
       title: 'Bike',
       subtitle: 'Road Trips are best',
-      icon: Icon(Icons.directions_bike),
+      icon: Icon(
+        Icons.directions_bike,
+        color: Colors.white,
+      ),
       bubbleColor: Colors.grey,
     ),
     TimelineItem(
       title: 'Bus',
       subtitle: 'I like to go with friends',
-      icon: Icon(Icons.directions_bus),
+      icon: Icon(
+        Icons.directions_bus,
+        color: Colors.white,
+      ),
       bubbleColor: Colors.grey,
     ),
   ];
@@ -33,7 +42,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Container(
           child: BubbleTimeline(
-            bubbleDiameter: 50,
+            bubbleDiameter: 120,
             items: _items,
             stripColor: Colors.teal,
             scaffoldColor: Colors.white,
