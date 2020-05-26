@@ -16,7 +16,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-    bubble_timeline:
+    bubble_timeline: ^1.0.4
 ```
 
 ## How to Use
@@ -75,7 +75,10 @@ TimelineItem(
     bubbleColor: Colors.blue,
 ),
 ```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+Please make sure to update tests as appropriate.
 
 ## LICENSE
 
