@@ -3,6 +3,11 @@ library bubble_timeline;
 import 'package:flutter/material.dart';
 import 'package:bubble_timeline/timeline_item.dart';
 
+class Config {
+  final String rightDirection = 'R';
+  final String leftDirection = 'L';
+}
+
 /// A Bubble Timeline Widget.
 class BubbleTimeline extends StatefulWidget {
   final double bubbleDiameter;
@@ -13,7 +18,7 @@ class BubbleTimeline extends StatefulWidget {
   /// Use same color as used for Scaffold background.
   final Color scaffoldColor;
 
-  BubbleTimeline({
+  const BubbleTimeline({
     @required this.bubbleDiameter,
     @required this.items,
     @required this.stripColor,
@@ -25,46 +30,27 @@ class BubbleTimeline extends StatefulWidget {
 }
 
 class _BubbleTimelineState extends State<BubbleTimeline> {
-  bool checkEven(n) {
-    if (n % 2 == 0) {
-      return true;
-    } else {
-      return false;
-    }
+  bool checkEven(int n) {
+    return n % 2 == 0;
   }
 
   List<TimelineBubble> createTimeline() {
-    List<TimelineBubble> _items = [];
+    final List<TimelineBubble> _items = [];
     for (var i = 0; i < widget.items.length; i++) {
-      if (checkEven(i)) {
-        _items.add(
-          TimelineBubble(
-            direction: 'L',
-            size: widget.bubbleDiameter,
-            title: widget.items[i].title,
-            subtitle: widget.items[i].subtitle,
-            description: widget.items[i].description,
-            icon: widget.items[i].icon,
-            stripColor: widget.stripColor,
-            bubbleColor: widget.items[i].bubbleColor,
-            bgColor: widget.scaffoldColor,
-          ),
-        );
-      } else {
-        _items.add(
-          TimelineBubble(
-            direction: 'R',
-            size: widget.bubbleDiameter,
-            title: widget.items[i].title,
-            subtitle: widget.items[i].subtitle,
-            description: widget.items[i].description,
-            icon: widget.items[i].icon,
-            stripColor: widget.stripColor,
-            bubbleColor: widget.items[i].bubbleColor,
-            bgColor: widget.scaffoldColor,
-          ),
-        );
-      }
+      _items.add(
+        TimelineBubble(
+          direction:
+              checkEven(i) ? Config().leftDirection : Config().rightDirection,
+          size: widget.bubbleDiameter,
+          title: widget.items[i].title,
+          subtitle: widget.items[i].subtitle,
+          description: widget.items[i].description,
+          icon: widget.items[i].icon,
+          stripColor: widget.stripColor,
+          bubbleColor: widget.items[i].bubbleColor,
+          bgColor: widget.scaffoldColor,
+        ),
+      );
     }
     return _items;
   }
@@ -88,7 +74,7 @@ class _BubbleTimelineState extends State<BubbleTimeline> {
 
 class TopHandle extends StatelessWidget {
   final Color handleColor;
-  TopHandle(this.handleColor);
+  const TopHandle(this.handleColor);
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +99,7 @@ class TopHandle extends StatelessWidget {
 
 class BottomHandle extends StatelessWidget {
   final Color handleColor;
-  BottomHandle(this.handleColor);
+  const BottomHandle(this.handleColor);
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +133,7 @@ class TimelineBubble extends StatelessWidget {
   final Color bgColor;
   final Color bubbleColor;
 
-  TimelineBubble({
+  const TimelineBubble({
     @required this.direction,
     @required this.size,
     @required this.title,
@@ -166,7 +152,7 @@ class TimelineBubble extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: direction == 'L'
+            children: direction == Config().leftDirection
                 ? <Widget>[
                     Text(
                       title,
@@ -176,7 +162,7 @@ class TimelineBubble extends StatelessWidget {
                       textAlign: TextAlign.right,
                     ),
                     if (subtitle != null) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -185,7 +171,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                     ],
                     if (description != null) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -221,8 +207,9 @@ class TimelineBubble extends StatelessWidget {
                             color: stripColor,
                           ),
                         ),
-                        clipper:
-                            direction == 'L' ? LeftClipper() : RightClipper(),
+                        clipper: direction == Config().leftDirection
+                            ? LeftClipper()
+                            : RightClipper(),
                       ),
                     ),
                     Container(
@@ -253,7 +240,7 @@ class TimelineBubble extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: direction == 'R'
+            children: direction == Config().rightDirection
                 ? <Widget>[
                     Text(
                       title,
@@ -263,7 +250,7 @@ class TimelineBubble extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                     if (subtitle != null) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -272,7 +259,7 @@ class TimelineBubble extends StatelessWidget {
                       ),
                     ],
                     if (description != null) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -292,7 +279,7 @@ class TimelineBubble extends StatelessWidget {
 class RightClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    var path = Path();
+    final path = Path();
     path.lineTo(0, size.height);
     path.lineTo(size.width / 2 + 3, size.height);
     path.lineTo(size.width / 2 + 3, 0);
@@ -307,7 +294,7 @@ class RightClipper extends CustomClipper<Path> {
 class LeftClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    var path = Path();
+    final path = Path();
     path.moveTo(size.width, 0);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width / 2 - 3, size.height);
