@@ -7,7 +7,7 @@ class TimelineItem {
   final Widget icon;
   final Color bubbleColor;
 
-  TimelineItem({
+  const TimelineItem({
     @required this.title,
     this.subtitle,
     this.description,
