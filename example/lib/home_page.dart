@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
     TimelineItem(
       title: 'Boat',
       subtitle: 'Travel through Oceans',
-      icon: Icon(
+      child: Icon(
         Icons.directions_boat,
         color: Colors.white,
       ),
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
     TimelineItem(
       title: 'Bike',
       subtitle: 'Road Trips are best',
-      icon: Icon(
+      child: Icon(
         Icons.directions_bike,
         color: Colors.white,
       ),
@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
     TimelineItem(
       title: 'Bus',
       subtitle: 'I like to go with friends',
-      icon: Icon(
+      child: Icon(
         Icons.directions_bus,
         color: Colors.white,
       ),

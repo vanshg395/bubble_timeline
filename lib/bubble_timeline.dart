@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:bubble_timeline/timeline_item.dart';
 
 class Config {
-  final String rightDirection = 'R';
-  final String leftDirection = 'L';
+  static String rightDirection = 'R';
+  static String leftDirection = 'L';
 }
 
 /// A Bubble Timeline Widget.
@@ -40,12 +40,12 @@ class _BubbleTimelineState extends State<BubbleTimeline> {
       _items.add(
         TimelineBubble(
           direction:
-              checkEven(i) ? Config().leftDirection : Config().rightDirection,
+              checkEven(i) ? Config.leftDirection : Config.rightDirection,
           size: widget.bubbleDiameter,
           title: widget.items[i].title,
           subtitle: widget.items[i].subtitle,
           description: widget.items[i].description,
-          icon: widget.items[i].icon,
+          icon: widget.items[i].child,
           stripColor: widget.stripColor,
           bubbleColor: widget.items[i].bubbleColor,
           bgColor: widget.scaffoldColor,
@@ -152,7 +152,7 @@ class TimelineBubble extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: direction == Config().leftDirection
+            children: direction == Config.leftDirection
                 ? <Widget>[
                     Text(
                       title,
@@ -207,7 +207,7 @@ class TimelineBubble extends StatelessWidget {
                             color: stripColor,
                           ),
                         ),
-                        clipper: direction == Config().leftDirection
+                        clipper: direction == Config.leftDirection
                             ? LeftClipper()
                             : RightClipper(),
                       ),
@@ -240,7 +240,7 @@ class TimelineBubble extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: direction == Config().rightDirection
+            children: direction == Config.rightDirection
                 ? <Widget>[
                     Text(
                       title,

@@ -16,7 +16,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-    bubble_timeline: ^1.0.4
+    bubble_timeline: ^1.0.5
 ```
 
 ## How to Use
@@ -31,7 +31,7 @@ Simply create a `BubbleTimeline` widget, and pass the required params:
         TimelineItem(
             title: 'Boat',
             subtitle: 'Travel through Oceans',
-            icon: Icon(
+            child: Icon(
                 Icons.directions_boat,
                 color: Colors.white,
             ),
@@ -40,7 +40,7 @@ Simply create a `BubbleTimeline` widget, and pass the required params:
         TimelineItem(
             title: 'Bike',
             subtitle: 'Road Trips are best',
-            icon: Icon(
+            child: Icon(
                 Icons.directions_bike,
                 color: Colors.white,
             ),
@@ -49,7 +49,7 @@ Simply create a `BubbleTimeline` widget, and pass the required params:
         TimelineItem(
             title: 'Bus',
             subtitle: 'I like to go with friends',
-            icon: Icon(
+            child: Icon(
                 Icons.directions_bus,
                 color: Colors.white,
             ),
@@ -69,7 +69,7 @@ TimelineItem(
     title: 'Title',
     subtitle: 'Subtitle',
     description: 'Description',
-    icon: Icon(
+    child: Icon(
         Icons.directions_bus,
     ),
     bubbleColor: Colors.blue,
@@ -80,9 +80,15 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## CONTRIBUTORS
+
+* [Vansh Goel](https://github.com/vanshg395/)
+
 ## LICENSE
 
 GNU GENERAL PUBLIC LICENSE 3.0
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
 
