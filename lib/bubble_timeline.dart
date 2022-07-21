@@ -254,6 +254,7 @@ class TimelineBubble extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
+                        height: 1,
                         color: Color(0xff413945),
                       ),
                       textAlign: TextAlign.left,
@@ -266,6 +267,7 @@ class TimelineBubble extends StatelessWidget {
                         subtitle!,
                         textAlign: TextAlign.left,
                         style: TextStyle(
+                          height: 1,
                           color: Color(0xff413945),
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
